@@ -139,3 +139,23 @@ If the pipeline stops due to a resource limit or disconnect, you can resume from
 ```bash
 nextflow run epi2me-labs/wf-16s --fastq data/test_data --out_dir results -profile standard -resume
 ```
+
+### 🧪 Dry Run & Pipeline Validation (Testing)
+Nextflow supports checking your pipeline structure and logic without running the actual heavy computation or processing datasets.
+
+#### 1. Preview Mode (`-preview`)
+This flag runs the workflow script and constructs the Directed Acyclic Graph (DAG) of the execution pipeline, but it **skips running any actual processes**. Use this to check syntax and setup logic:
+```bash
+./run_preview.sh
+```
+Or directly:
+```bash
+nextflow run epi2me-labs/wf-16s --fastq data/test_data --out_dir results -profile standard -preview
+```
+
+#### 2. Stub Run Mode (`-stub-run`)
+This mode executes the pipeline but replaces the actual tool commands (like Minimap2 alignment) with mock/dummy stubs. It is useful for testing file-flow wiring:
+```bash
+nextflow run epi2me-labs/wf-16s --fastq data/test_data --out_dir results -profile standard -stub-run
+```
+
