@@ -16,7 +16,7 @@ nextflow run epi2me-labs/wf-16s \
   --fastq "$DATA_DIR" \
   --out_dir "$OUT_DIR" \
   --minimap2_by_reference \
-  -profile docker
+  -profile standard
 
 echo "=== Analysis Completed! ==="
 echo "Check the report folder: $OUT_DIR"

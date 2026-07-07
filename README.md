@@ -93,12 +93,12 @@ nextflow run epi2me-labs/wf-16s \
   --fastq data/test_data \
   --out_dir results \
   --minimap2_by_reference \
-  -profile docker
+  -profile standard
 ```
 * **`--fastq`**: Path to the folder containing your raw FASTQ files.
 * **`--out_dir`**: The directory where output results and reports will be saved.
 * **`--minimap2_by_reference`**: Uses alignment-based classification against the SILVA reference database.
-* **`-profile docker`**: Pulls and runs all necessary software components (minimap2, kraken2, python tools) within a Docker container.
+* **`-profile standard`**: Pulls and runs all necessary software components (minimap2, kraken2, python tools) within a Docker container.
 
 ---
 
@@ -131,11 +131,11 @@ nextflow run epi2me-labs/wf-16s \
   --out_dir results \
   --database_fasta custom_ref.fasta \
   --database_taxonomy custom_ref_taxonomy.txt \
-  -profile docker
+  -profile standard
 ```
 
 ### Resuming a Interrupted Run
 If the pipeline stops due to a resource limit or disconnect, you can resume from the last successful checkpoint by adding the `-resume` flag:
 ```bash
-nextflow run epi2me-labs/wf-16s --fastq data/test_data --out_dir results -profile docker -resume
+nextflow run epi2me-labs/wf-16s --fastq data/test_data --out_dir results -profile standard -resume
 ```
