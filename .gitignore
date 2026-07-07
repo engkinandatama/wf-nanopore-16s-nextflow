@@ -1,0 +1,13 @@
+# Nextflow temporary and execution files
+.nextflow/
+.nextflow.log*
+work/
+
+# Pipeline data and results (downloaded dataset and output)
+data/
+wf-16s-demo.tar.gz
+results/
+
+# OS-specific files
+.DS_Store
+Thumbs.db
